@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.load {
+    padding-top: 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 89, 0);
+}
+
+.load__info {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.load__title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 60px;
+    text-shadow: 2px 2px 20px green;
+}
+
+.load__nickname {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 20px white;
+}
+
+.load__buttons {
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.load__btn {
+    min-width: 160px;
+    display: block;
+    padding: 10px;
+    background-color: #ADD100;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.load__btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.load__decoration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.load__img {
+    height: 200px;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .load__title {
+        font-size: 40px;
+    }
+}

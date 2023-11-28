@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cheerful gardener - vseleyshiy</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="short icon" href="img/short__icon.png">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="money__lengths">
+                <button class="shop__button" id="shopOpen" onclick="shopOpen()">
+                    Магазин
+                </button>
+                <div class="money__length">
+                    <img src="img/tomatoes__icon.png" alt="tomato icon" class="icon__img">
+                    <div class="money__length-text" id="tomatoesLength">
+                        0
+                    </div>
+                </div>
+                <div class="money__length">
+                    <img src="img/bed__img.png" alt="tomatoes icon" class="icon__img">
+                    <div class="bed__length-text" id="bedLength">
+                    </div>
+                </div>
+            </div>
+            <main class="main" id="main">
+                <section class="g__bed">
+                    <div class="g__bed-info">
+                        <div class="g__bed-title">
+                            <div class="g__bed-title-title">
+                                Помидоры
+                            </div>
+                            <div class="g__bed-text">
+                                С одной Грядки <br>
+                                +1 плод раз в 5 секунд
+                            </div>
+                        </div>
+                        <div class="g__bed-set-title" id="setLength">
+                            Всего можно собрать: 0
+                        </div>
+                        <button class="g__bed-button" onclick="setTomatoes()">
+                            Собрать урожай
+                        </button>
+                    </div>
+                    <ul class="g__bed-list" id="gBedList">
+                        <li class="g__bed-item">
+                            <div class="g__bed-item-title">
+                                1 Грядка
+                            </div>
+                            <div class="g__bed-img-wrap">
+                                <img src="img/tomatoes.png" alt="tomatoes" class="g__bed-img">
+                                <div class="g__bed-block">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+            <section class="shop" id="shop">
+                <div class="shop__title">
+                    <button class="back" id="buttonBack" onclick="shopClose()">
+                        Назад
+                    </button>
+                    <div class="shop__title-title">
+                        Магазин
+                    </div>
+                </div>
+                <ul class="shop__list">
+                    <div id="littleMoney" class="error">У вас недостаточно средств на балансе!</div>
+                    <div id="manyBeds" class="error">Вы можете купить только 6 грядок помидоров!</div>
+                    <li class="shop__item">
+                        <div class="shop__item-title">
+                            <img src="img/tomatoes.png" alt="tomatoes" class="shop__item-img">
+                            Стоимость: 50 <br>
+                            1 Грядка помидоров
+                        </div>
+                        <div class="shop__button-buy" onclick="shopBuy(); addBedNumber()">
+                            +
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
