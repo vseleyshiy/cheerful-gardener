@@ -17,14 +17,25 @@
                     Магазин
                 </button>
                 <div class="money__length">
+                    <img src="img/bed__img.png" alt="tomatoes icon" class="icon__img">
+                    <div class="bed__length-text" id="bedTomatoesLength">
+                    </div>
+                </div>
+                <div class="money__length" id="moneyLengthBedCucumbers">
+                    <img src="img/bed-cucumbers_img.png" alt="cucumbers icon" class="icon__img">
+                    <div class="bed__length-text" id="bedCucumbersLength">
+                    </div>
+                </div>
+                <div class="money__length">
                     <img src="img/tomatoes__icon.png" alt="tomato icon" class="icon__img">
                     <div class="money__length-text" id="tomatoesLength">
                         0
                     </div>
                 </div>
-                <div class="money__length">
-                    <img src="img/bed__img.png" alt="tomatoes icon" class="icon__img">
-                    <div class="bed__length-text" id="bedLength">
+                <div class="money__length money__length-cucumbers" id="moneyLengthCucumbers">
+                    <img src="img/cucumbers__icon.png" alt="cucumber icon" class="icon__img">
+                    <div class="money__length-text" id="cucumbersLength">
+                        0
                     </div>
                 </div>
             </div>
@@ -40,25 +51,70 @@
                                 +1 плод раз в 5 секунд
                             </div>
                         </div>
-                        <div class="g__bed-set-title" id="setLength">
+                        <div class="g__bed-set-title" id="setTomatoesLength">
                             Всего можно собрать: 0
                         </div>
                         <button class="g__bed-button" onclick="setTomatoes()">
                             Собрать урожай
                         </button>
                     </div>
-                    <ul class="g__bed-list" id="gBedList">
-                        <li class="g__bed-item">
-                            <div class="g__bed-item-title">
-                                1 Грядка
+                    <div class="greenhouse__wrap">
+                        <div class="greenhouse">
+                            <div class="greenhouse__title">
+                                Теплица с помидорами
                             </div>
-                            <div class="g__bed-img-wrap">
-                                <img src="img/tomatoes.png" alt="tomatoes" class="g__bed-img">
-                                <div class="g__bed-block">
-                                </div>
+                            <ul class="g__bed-list" id="gBedTomatoesList">
+                                <li class="g__bed-item">
+                                    <div class="g__bed-item-title">
+                                        1 Грядка
+                                    </div>
+                                    <div class="g__bed-img-wrap">
+                                        <img src="img/tomatoes.png" alt="tomatoes" class="g__bed-img">
+                                    </div>
+                                    <div class="g__bed-block">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="g__bed cucumbers" id="GBedCucumbers">
+                    <div class="g__bed-info g__bed-info-cucumbers">
+                        <div class="g__bed-title g__bed-title-cucumbers">
+                            <div class="g__bed-title-title">
+                                Огурцы
                             </div>
-                        </li>
-                    </ul>
+                            <div class="g__bed-text">
+                                С одной Грядки <br>
+                                +1 плод раз в 10 секунд
+                            </div>
+                        </div>
+                        <div class="g__bed-set-title" id="setCucumbersLength">
+                            Всего можно собрать: 0
+                        </div>
+                        <button class="g__bed-button" onclick="setCucumbers()">
+                            Собрать урожай
+                        </button>
+                    </div>
+                    <div class="greenhouse__wrap">
+                        <div class="greenhouse">
+                            <div class="greenhouse__title">
+                                Теплица с огурцами
+                            </div>
+                            <ul class="g__bed-list" id="GBedCucumbersList">
+                                <li class="g__bed-item g__bed-item-cucumbers">
+                                    <div class="g__bed-item-title">
+                                        1 Грядка
+                                    </div>
+                                    <div class="g__bed-img-wrap">
+                                        <img src="img/cucumbers.png" alt="cucumbers" class="g__bed-img">
+                                    </div>
+                                    <div class="g__bed-block">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
             </main>
             <section class="shop" id="shop">
@@ -71,15 +127,67 @@
                     </div>
                 </div>
                 <ul class="shop__list">
+                    <div id="congratulations">
+                    </div>
                     <div id="littleMoney" class="error">У вас недостаточно средств на балансе!</div>
-                    <div id="manyBeds" class="error">Вы можете купить только 6 грядок помидоров!</div>
+                    <div id="manyBeds" class="error"></div>
                     <li class="shop__item">
                         <div class="shop__item-title">
-                            <img src="img/tomatoes.png" alt="tomatoes" class="shop__item-img">
-                            Стоимость: 50 <br>
-                            1 Грядка помидоров
+                            <div class="shop__item-img-wrap">
+                                <img src="img/tomatoes.png" alt="tomatoes" class="shop__item-img">
+                            </div>
+                            <div class="shop__price">
+                                <div class="shop__price-title">
+                                    <div class="shop__price-title-text" id="inputTomatoesBedPriceText">
+                                    </div>
+                                    <div class="shop__price-title-price" id="inputTomatoesBedPriceNumber"></div>
+                                </div>
+                                <div class="shop__price-text">
+                                    1 Грядка помидоров
+                                </div>
+                            </div>
                         </div>
-                        <div class="shop__button-buy" onclick="shopBuy(); addBedNumber()">
+                        <div class="shop__button-buy" onclick="shopBuyBedTomatoes()">
+                            +
+                        </div>
+                    </li>
+                    <li class="shop__item" id="GBedCucumbersShop">
+                        <div class="shop__item-title">
+                            <div class="shop__item-img-wrap">
+                                <img src="img/GBed__cucumbers.png" alt="GBed cucumbers" class="shop__item-img">
+                            </div>
+                            <div class="shop__price">
+                                <div class="shop__price-title">
+                                    Стоимость:
+                                    <img src="img/tomatoes__icon.png" alt="tomato icon" class="shop-icon__img">100
+                                </div>
+                                <div class="shop__price-text">
+                                    Возможность выращивания огурцов
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop__button-buy" onclick="shopBuyGBedCucumbers()">
+                            +
+                        </div>
+                    </li>
+                    <li class="shop__item shop__item-cucumbers">
+                        <div class="shop__item-title">
+                            <div class="shop__item-img-wrap">
+                                <img src="img/cucumbers.png" alt="cucumbers" class="shop__item-img">
+                            </div>
+                            <div class="shop__price">
+                                <div class="shop__price-title">
+                                    <div class="shop__price-title-text" id="inputCucumbersBedPriceText">
+                                    </div>
+                                    <div class="shop__price-title-price" id="inputCucumbersBedPriceNumber">
+                                    </div>
+                                </div>
+                                <div class="shop__price-text">
+                                    1 Грядка огурцов
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop__button-buy" onclick="shopBuyBedCucumbers()">
                             +
                         </div>
                     </li>
