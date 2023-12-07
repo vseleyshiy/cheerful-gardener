@@ -1,0 +1,232 @@
+.game {
+    background-color: rgb(0, 182, 0);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: none;
+}
+
+.back.game__button-back {
+    height: 70px;
+    margin: 10px;
+}
+
+.game__container {
+    padding: 0px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game__titles {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+}
+
+.game__title {
+    width: 100%;
+    background-color: rgb(198, 198, 198);
+    color: rgb(84, 84, 84);
+    padding: 10px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px white;
+}
+
+.game__title:nth-child(2) {
+    color: rgb(234, 234, 234);
+    background-color: rgb(0, 153, 0);
+}
+
+#gameBoostInfo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(200, 200, 200);
+    color: rgb(87, 87, 87);
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 1px solid black;
+}
+
+.game__info {
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.game__offer {
+    margin-bottom: 20px;
+    height: 20%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    flex-direction: column;
+}
+
+.game__text {
+    text-align: center;
+    background-color: rgb(200, 200, 200);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    padding: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid black;
+}
+
+.game__offer-text {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.game__offer-block {
+    padding: 10px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.game__offer-column {}
+
+.game__offer-column-number {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.game__offer-column-text {
+    font-size: 17px;
+}
+
+.game__offer-button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(184, 184, 184);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.game__new-record {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    text-align: left;
+}
+
+.game__map {
+    position: relative;
+    transition: all 0.3s ease;
+    height: 223px;
+    width: 223px;
+    background-color: rgb(131, 131, 131);
+    border: 3px solid white;
+}
+
+.game__square {
+    height: 20px;
+    width: 20px;
+    transition: all 0.3s ease;
+    background-color: rgb(188, 188, 188);
+    border-radius: 2px;
+}
+
+.game__point {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.game__buttons {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game__btn {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+}
+
+.game__btn-none {
+    border: none;
+    background: none;
+}
+
+@keyframes defeat {
+
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.game__defeat-animation {
+    background-color: red;
+    transform: scale(1.5);
+    animation-name: defeat;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}

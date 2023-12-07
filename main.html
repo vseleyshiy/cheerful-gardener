@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cheerful gardener - vseleyshiy</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
     <link rel="short icon" href="img/short__icon.png">
 </head>
 
@@ -13,29 +14,38 @@
     <div class="wrapper">
         <div class="container">
             <div class="money__lengths">
-                <button class="shop__button" id="shopOpen" onclick="shopOpen()">
-                    Магазин
-                </button>
-                <div class="money__length">
-                    <img src="img/bed__img.png" alt="tomatoes icon" class="icon__img">
-                    <div class="bed__length-text" id="bedTomatoesLength">
-                    </div>
+                <div class="money__lengths-buttons">
+                    <button class="shop__button" id="shopOpen" onclick="shopOpen()">
+                        Магазин
+                    </button>
+                    <button class="game__button" id="gameOpenButton" onclick="gameOpen()">Удобрения</button>
                 </div>
-                <div class="money__length" id="moneyLengthBedCucumbers">
-                    <img src="img/bed-cucumbers_img.png" alt="cucumbers icon" class="icon__img">
-                    <div class="bed__length-text" id="bedCucumbersLength">
+                <div class="money__lengths-info">
+                    <div class="money__lengths-info-column">
+                        <div class="money__length">
+                            <img src="img/tomatoes__icon.png" alt="tomato icon" class="icon__img">
+                            <div class="money__length-text" id="tomatoesLength">
+                                0
+                            </div>
+                        </div>
+                        <div class="money__length money__length-cucumbers" id="moneyLengthCucumbers">
+                            <img src="img/cucumbers__icon.png" alt="cucumber icon" class="icon__img">
+                            <div class="money__length-text" id="cucumbersLength">
+                                0
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="money__length">
-                    <img src="img/tomatoes__icon.png" alt="tomato icon" class="icon__img">
-                    <div class="money__length-text" id="tomatoesLength">
-                        0
-                    </div>
-                </div>
-                <div class="money__length money__length-cucumbers" id="moneyLengthCucumbers">
-                    <img src="img/cucumbers__icon.png" alt="cucumber icon" class="icon__img">
-                    <div class="money__length-text" id="cucumbersLength">
-                        0
+                    <div class="money__lengths-info-column">
+                        <div class="money__length bed">
+                            <img src="img/bed__img.png" alt="tomatoes icon" class="icon__img">
+                            <div class="bed__length-text" id="bedTomatoesLength">
+                            </div>
+                        </div>
+                        <div class="money__length bed" id="moneyLengthBedCucumbers">
+                            <img src="img/bed-cucumbers_img.png" alt="cucumbers icon" class="icon__img">
+                            <div class="bed__length-text" id="bedCucumbersLength">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,20 +68,35 @@
                             Собрать урожай
                         </button>
                     </div>
+                    <div id="errorMain" class="error"></div>
                     <div class="greenhouse__wrap">
                         <div class="greenhouse">
                             <div class="greenhouse__title">
                                 Теплица с помидорами
                             </div>
+                            <div class="g__bed-add-info">
+                                <div id="tomatoesInfoGBedAddInfo">
+                                    <div id="tomatoesGBedAddInfoTitle" class="g__bed-add-info-title">
+                                        Лог удобрений помидоров
+                                    </div>
+                                    <div id="tomatoesTextGBedAddInfo" class="g__bed-add-info-text">
+                                    </div>
+                                </div>
+                                <button class="g__bed-item-button" onclick="useBoostTomatoes()">
+                                    Удобрить x1
+                                </button>
+                            </div>
                             <ul class="g__bed-list" id="gBedTomatoesList">
                                 <li class="g__bed-item">
-                                    <div class="g__bed-item-title">
-                                        1 Грядка
-                                    </div>
-                                    <div class="g__bed-img-wrap">
-                                        <img src="img/tomatoes.png" alt="tomatoes" class="g__bed-img">
-                                    </div>
-                                    <div class="g__bed-block">
+                                    <div class="g__bed-item-info">
+                                        <div class="g__bed-item-title">
+                                            1 Грядка
+                                        </div>
+                                        <div class="g__bed-img-wrap">
+                                            <img src="img/tomatoes.png" alt="tomatoes" class="g__bed-img">
+                                        </div>
+                                        <div class="g__bed-block">
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -101,15 +126,29 @@
                             <div class="greenhouse__title">
                                 Теплица с огурцами
                             </div>
+                            <div class="g__bed-add-info">
+                                <div id="cucumbersInfoGBedAddInfo">
+                                    <div id="cucumbersGBedAddInfoTitle" class="g__bed-add-info-title">
+                                        Лог удобрений огурцов
+                                    </div>
+                                    <div id="cucumbersTextGBedAddInfo" class="g__bed-add-info-text">
+                                    </div>
+                                </div>
+                                <button class="g__bed-item-button" onclick="useBoostCucumbers()">
+                                    Удобрить x1
+                                </button>
+                            </div>
                             <ul class="g__bed-list" id="GBedCucumbersList">
                                 <li class="g__bed-item g__bed-item-cucumbers">
-                                    <div class="g__bed-item-title">
-                                        1 Грядка
-                                    </div>
-                                    <div class="g__bed-img-wrap">
-                                        <img src="img/cucumbers.png" alt="cucumbers" class="g__bed-img">
-                                    </div>
-                                    <div class="g__bed-block">
+                                    <div class="g__bed-item-info">
+                                        <div class="g__bed-item-title">
+                                            1 Грядка
+                                        </div>
+                                        <div class="g__bed-img-wrap">
+                                            <img src="img/cucumbers.png" alt="cucumbers" class="g__bed-img">
+                                        </div>
+                                        <div class="g__bed-block">
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -129,8 +168,7 @@
                 <ul class="shop__list">
                     <div id="congratulations">
                     </div>
-                    <div id="littleMoney" class="error">У вас недостаточно средств на балансе!</div>
-                    <div id="manyBeds" class="error"></div>
+                    <div id="error" class="error"></div>
                     <li class="shop__item">
                         <div class="shop__item-title">
                             <div class="shop__item-img-wrap">
@@ -193,9 +231,85 @@
                     </li>
                 </ul>
             </section>
+            <section class="game" id="game">
+                <button class="back game__button-back" id="buttonBack" onclick="gameClose()">
+                    Назад
+                </button>
+                <div class="game__container">
+                    <div class="game__titles">
+                        <div class="game__title">
+                            Обменяй 20 монеток на 1 удобрение! <br>
+                            Играй в мини-игру и зарабатывай на удобрения!
+                        </div>
+                        <div class="game__title">
+                            1 удобрение делает 1 вашу грядку в 2 раза быстрее.
+                        </div>
+                    </div>
+                    <div class="game__info">
+                        <div class="game__offer">
+                            <div id="gameBoostInfo">
+                                Удобрений: 0
+                            </div>
+                            <div class="game__offer-text">
+                                Обменять монетки на удобрения?
+                            </div>
+                            <div class="game__offer-block">
+                                <div class="game__offer-column">
+                                    <div class="game__offer-column-text">
+                                        Отдадите монет:
+                                    </div>
+                                    <div class="game__offer-column-text">
+                                        Получите удобрений:
+                                    </div>
+                                </div>
+                                <div class="game__offer-column">
+                                    <div id="gameOfferColumnTake" class="game__offer-column-number">
+                                    </div>
+                                    <div id="gameOfferColumnReturn" class="game__offer-column-number">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="game__offer-button" id="offerButton" onclick="setGame()">
+                                Обменять
+                            </button>
+                            <div class="game__text" id="check">
+                            </div>
+                        </div>
+                        <div class="game__wrap">
+                            <div class="game__map" id="map">
+                                <div class="game__square" id="square"></div>
+                                <img src="img/money.png" alt="point" class="game__point" id="point">
+                            </div>
+                            <table class="game__buttons">
+                                <tr>
+                                    <td class="game__btn game__btn-none"></td>
+                                    <td>
+                                        <button class="game__btn" id="btnTop" onclick="btnTopClick()">&#8593;</button>
+                                    </td>
+                                    <td class="game__btn game__btn-none"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="game__btn" id="btnLeft" onclick="btnLeftClick()">&#8592;</button>
+                                    </td>
+                                    <td>
+                                        <button class="game__btn" id="btnBottom"
+                                            onclick="btnBottomClick()">&#8595;</button>
+                                    </td>
+                                    <td>
+                                        <button class="game__btn" id="btnRight"
+                                            onclick="btnRightClick()">&#8594;</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/game.js"></script>
 </body>
 
 </html>
