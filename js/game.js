@@ -136,8 +136,8 @@ function setGame() {
     if (checkPoint >= 20) {
         boostLength += mathFloorCheckPoint(checkPoint) / 20;
         gameBoostInfo.innerHTML = 'Удобрений: ' + boostLength;
-        checkPoint = 0;
-        check.innerHTML = 'Монеток: 0';
+        checkPoint -= 20;
+        check.innerHTML = 'Монеток: ' + checkPoint;
     } else {
         setTimeout(() => {
             gameBoostInfo.innerHTML = 'У вас недостаточно монет!';

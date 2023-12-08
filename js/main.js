@@ -17,6 +17,7 @@ function setTomatoes() {
     tomatoesLength.innerHTML = tomato + Number(tomatoesLength.innerHTML);
     tomato = 0;
     setTomatoesLength.innerHTML = "Всего можно собрать: 0";
+    showAchievementRedGold();
 };
 
 setInterval(addTomatoes, tomatoesInterval);
@@ -39,7 +40,7 @@ function shopClose() {
     shopOpenButton.style.display = 'block';
     gameOpenButton.style.display = 'block';
     error.style.display = 'none';
-    congratulations.style.display = 'none';
+    congratulationsShop.style.display = 'none';
 };
 
 let gBedTomatoesList = document.getElementById('gBedTomatoesList');
@@ -87,6 +88,7 @@ function shopBuyBedTomatoes() {
             GBedCucumbersShop.style.display = 'flex';
         }
     }
+    endGame()
 };
 
 let cucumber = 0;
@@ -108,9 +110,10 @@ let GBedCucumbersShop = document.getElementById('GBedCucumbersShop');
 let GBedCucumbers = document.getElementById('GBedCucumbers');
 let GBedCucumbersList = document.getElementById('GBedCucumbersList');
 let shopItemCucumbers = document.querySelector('li.shop__item.shop__item-cucumbers');
+let moneyLengths = document.getElementById('moneyLengths');
 let moneyLengthBedCucumbers = document.getElementById('moneyLengthBedCucumbers');
 let moneyLengthCucumbers = document.getElementById('moneyLengthCucumbers');
-let congratulations = document.getElementById('congratulations');
+let congratulationsShop = document.getElementById('congratulationsShop');
 let inputCucumbersBedPriceNumber = document.getElementById('inputCucumbersBedPriceNumber');
 let inputCucumbersBedPriceText = document.getElementById('inputCucumbersBedPriceText');
 
@@ -120,8 +123,8 @@ function shopBuyGBedCucumbers() {
         tomatoesBedLimit = 15;
         bedTomatoesLength.innerHTML = tomatoesBedNum + '/' + tomatoesBedLimit;
         setTimeout(() => {
-            congratulations.style.display = 'block';
-            congratulations.innerHTML = 'Поздравляю, ваш лимит на грядки с помидорами повышен до ' + tomatoesBedLimit + '!';
+            congratulationsShop.style.display = 'block';
+            congratulationsShop.innerHTML = 'Поздравляю, ваш лимит на грядки с помидорами повышен до ' + tomatoesBedLimit + '!';
         }, 200);
         GBedCucumbersShop.style.display = 'none';
         GBedCucumbers.style.display = 'flex';
@@ -168,6 +171,7 @@ function shopBuyBedCucumbers() {
         error.innerHTML = 'У вас недостаточно средств на балансе!';
         error.style.display = 'block';
     };
+    endGame()
 }
 
 let tomatoesTextGBedAddInfo = document.getElementById('tomatoesTextGBedAddInfo');
@@ -277,3 +281,41 @@ function useBoostCucumbers() {
         }, 3000);
     }
 };
+
+let congratulationsMain = document.getElementById('congratulationsMain');
+let congratulationsMainText = document.getElementById('congratulationsMainText');
+let congratulationsInfoAchievement = document.getElementById('congratulationsInfoAchievement');
+
+function endGame() {
+    if (tomatoesBedNum === tomatoesBedLimit && cucumbersBedNum === cucumbersBedLimit) {
+        main.style.display = 'none';
+        shop.style.display = 'none';
+        game.style.display = 'none';
+        moneyLengths.style.display = 'none';
+        congratulationsMain.style.display = 'block';
+        congratulationsMainText.style.display = 'block';
+        congratulationsInfoAchievement.innerHTML = 'Секретных ачивок выполнено: ' + completedAchievement + '/' + allAchievementLength;
+    }
+}
+
+
+let completedAchievement = 0;
+let allAchievementLength = 1;
+let achievementRedGold = document.getElementById('achievementRedGold');
+// let closeAchievementRedGold = document.getElementById('closeAchievementRedGold');
+
+function showAchievementRedGold() {
+    if (Number(tomatoesLength.innerHTML) >= 1000) {
+        if (Number(tomatoesLength.innerHTML) >= 1000 && achievementRedGold.classList.contains('achievement__animation')) {
+            achievementRedGold.style.display = 'none';
+        } else {
+            completedAchievement++;
+            achievementRedGold.style.display = 'block';
+            achievementRedGold.classList.add('achievement__animation');
+        }
+    }
+}
+
+function hideAchievementRedGold() {
+    achievementRedGold.style.display = 'none';
+}

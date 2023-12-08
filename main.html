@@ -13,7 +13,34 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="money__lengths">
+            <div class="achievements">
+                <div class="achievement" id="achievementRedGold">
+                    <div class="achievement__block">
+                        <div class="achievement__close" id="closeAchievementRedGold" onclick="hideAchievementRedGold()">
+                            &times;
+                        </div>
+                        <div class="achievement__decoration">
+                            <div class="achievement__img-wrap">
+                                <img src="img/tomatoes__achievement.png" alt="img achievement" class="achievement__img">
+                            </div>
+                        </div>
+                        <div class="achievement__info">
+                            <div class="achievement__title">
+                                Секретная ачивка!
+                            </div>
+                            <div class="achievement__title-info">
+                                <div class="achievement__subtitle">
+                                    Красное золото
+                                </div>
+                                <div class="achievement__text">
+                                    Добудьте 1000 помидорок
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="money__lengths" id="moneyLengths">
                 <div class="money__lengths-buttons">
                     <button class="shop__button" id="shopOpen" onclick="shopOpen()">
                         Магазин
@@ -166,7 +193,7 @@
                     </div>
                 </div>
                 <ul class="shop__list">
-                    <div id="congratulations">
+                    <div id="congratulationsShop" class="congratulations__error">
                     </div>
                     <div id="error" class="error"></div>
                     <li class="shop__item">
@@ -305,6 +332,31 @@
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="congratulationsMain" style="display: none;">
+                <div class="congratulations__error" id="congratulationsMainText">
+                    Поздравляю, вы прошли игру!
+                </div>
+                <div class="congratulations__info">
+                    <div class="congratulations__info-text" id="congratulationsInfoAchievement">
+                    </div>
+                </div>
+                <div class="congratulations__info">
+                    <div class="congratulations__info-text">
+                        Спасибо за то, что играете в мои игры! &#128512;
+                    </div>
+                    <div class="congratulations__info-text">
+                        Если есть какие то баги - пишите мне по ссылке ниже.
+                    </div>
+                    <div class="congratulations__info-text">
+                        Интересуют другие проекты? По этой же ссылке вы их найдёте.
+                    </div>
+                </div>
+                <a href="https://vseleyshiy.github.io/visitka/">
+                    <div class="congratulations__info">
+                        Связь со мной и другие проекты
+                    </div>
+                </a>
             </section>
         </div>
     </div>
