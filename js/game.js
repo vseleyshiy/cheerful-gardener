@@ -7,6 +7,7 @@ function gameOpen() {
     game.style.display = 'block';
     gameOpenButton.style.display = 'none';
     shopOpenButton.style.display = 'none';
+    achievementMoneyHunterIcon.style.display = 'none';
 }
 
 function gameClose() {
@@ -136,7 +137,7 @@ function setGame() {
     if (checkPoint >= 20) {
         boostLength += mathFloorCheckPoint(checkPoint) / 20;
         gameBoostInfo.innerHTML = 'Удобрений: ' + boostLength;
-        checkPoint -= 20;
+        checkPoint -= mathFloorCheckPoint(checkPoint);
         check.innerHTML = 'Монеток: ' + checkPoint;
     } else {
         setTimeout(() => {

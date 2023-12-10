@@ -6,8 +6,8 @@ let tomatoesBedNum = 1;
 let cucumbersBedNum = 1;
 let tomatoesBedLimit = 6;
 let cucumbersBedLimit = 10;
-let tomatoesInterval = 5000;
-let cucumbersInterval = 10000;
+let tomatoesInterval = 1;
+let cucumbersInterval = 1;
 
 function addTomatoes() {
     tomato++
@@ -32,6 +32,7 @@ function shopOpen() {
     shop.style.display = 'block';
     shopOpenButton.style.display = 'none';
     gameOpenButton.style.display = 'none';
+    showAchievementMoneyHunterIcon();
 };
 
 function shopClose() {
@@ -41,6 +42,7 @@ function shopClose() {
     gameOpenButton.style.display = 'block';
     error.style.display = 'none';
     congratulationsShop.style.display = 'none';
+    achievementMoneyHunterIcon.style.display = 'none';
 };
 
 let gBedTomatoesList = document.getElementById('gBedTomatoesList');
@@ -88,7 +90,8 @@ function shopBuyBedTomatoes() {
             GBedCucumbersShop.style.display = 'flex';
         }
     }
-    endGame()
+    showAchievementMoneyHunterIcon();
+    endGame();
 };
 
 let cucumber = 0;
@@ -291,6 +294,7 @@ function endGame() {
         main.style.display = 'none';
         shop.style.display = 'none';
         game.style.display = 'none';
+        achievementMoneyHunterIcon.style.display = 'none';
         moneyLengths.style.display = 'none';
         congratulationsMain.style.display = 'block';
         congratulationsMainText.style.display = 'block';
@@ -300,7 +304,7 @@ function endGame() {
 
 
 let completedAchievement = 0;
-let allAchievementLength = 1;
+let allAchievementLength = 2;
 let achievementRedGold = document.getElementById('achievementRedGold');
 // let closeAchievementRedGold = document.getElementById('closeAchievementRedGold');
 
@@ -318,4 +322,28 @@ function showAchievementRedGold() {
 
 function hideAchievementRedGold() {
     achievementRedGold.style.display = 'none';
+}
+
+let achievementMoneyHunter = document.getElementById('achievementMoneyHunter');
+let achievementMoneyHunterIcon = document.getElementById('achievementMoneyHunterIcon');
+
+function showAchievementMoneyHunterIcon() {
+    if (tomatoesBedNum >= 6) {
+        if (achievementMoneyHunter.classList.contains('achievement__animation')) {
+            achievementMoneyHunterIcon.style.display = 'none';
+        } else {
+            achievementMoneyHunterIcon.style.display = 'block';
+        }
+    }
+}
+
+function showAchievementMoneyHunter() {
+    completedAchievement++;
+    achievementMoneyHunter.style.display = 'block';
+    achievementMoneyHunterIcon.style.display = 'none';
+    achievementMoneyHunter.classList.add('achievement__animation');
+}
+
+function hideAchievementMoneyHunter() {
+    achievementMoneyHunter.style.display = 'none';
 }

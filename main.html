@@ -16,7 +16,7 @@
             <div class="achievements">
                 <div class="achievement" id="achievementRedGold">
                     <div class="achievement__block">
-                        <div class="achievement__close" id="closeAchievementRedGold" onclick="hideAchievementRedGold()">
+                        <div class="achievement__close" onclick="hideAchievementRedGold()">
                             &times;
                         </div>
                         <div class="achievement__decoration">
@@ -34,6 +34,31 @@
                                 </div>
                                 <div class="achievement__text">
                                     Добудьте 1000 помидорок
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement" id="achievementMoneyHunter">
+                    <div class="achievement__block">
+                        <div class="achievement__close" onclick="hideAchievementMoneyHunter()">
+                            &times;
+                        </div>
+                        <div class="achievement__decoration">
+                            <div class="achievement__img-wrap">
+                                <img src="img/cash_achievement.png" alt="img achievement" class="achievement__img">
+                            </div>
+                        </div>
+                        <div class="achievement__info">
+                            <div class="achievement__title">
+                                Секретная ачивка!
+                            </div>
+                            <div class="achievement__title-info">
+                                <div class="achievement__subtitle">
+                                    Искатель сокровищ
+                                </div>
+                                <div class="achievement__text">
+                                    Найдите секретную залежу денег
                                 </div>
                             </div>
                         </div>
@@ -258,6 +283,11 @@
                     </li>
                 </ul>
             </section>
+            <div id="achievementMoneyHunterIcon" onclick="showAchievementMoneyHunter()">
+                <div class="achievement__money-hunter-img-wrap">
+                    <img src="img/cash_achievement.png" alt="cash icon" class="achievement__money-hunter-img">
+                </div>
+            </div>
             <section class="game" id="game">
                 <button class="back game__button-back" id="buttonBack" onclick="gameClose()">
                     Назад

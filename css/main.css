@@ -63,12 +63,22 @@ img {
     animation: achievementShow 3s 1;
 }
 
-.achievement {
-    z-index: 30;
-    position: fixed;
-    display: none;
+.achievements {
+    width: 350px;
     top: 120px;
     left: 0;
+    z-index: 30;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.achievement {
+    width: 100%;
+    display: none;
+    left: 0;
+    top: 0;
 }
 
 .achievement__block {
@@ -125,6 +135,27 @@ img {
 }
 
 .achievement__text {}
+
+#achievementMoneyHunterIcon {
+    margin-top: 1000px;
+    position: relative;
+    display: none;
+}
+
+.achievement__money-hunter-img-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.achievement__money-hunter-img {
+    border-radius: 40px;
+    height: 100px;
+    width: 120px;
+}
 
 .main {
     background: linear-gradient(135deg, #57d100, #7B920A);
@@ -464,6 +495,7 @@ img {
 }
 
 .shop {
+    position: relative;
     display: none;
     background-color: rgb(11, 158, 11);
     border-bottom-left-radius: 20px;
