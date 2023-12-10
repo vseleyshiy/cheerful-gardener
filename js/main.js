@@ -6,8 +6,8 @@ let tomatoesBedNum = 1;
 let cucumbersBedNum = 1;
 let tomatoesBedLimit = 6;
 let cucumbersBedLimit = 10;
-let tomatoesInterval = 1;
-let cucumbersInterval = 1;
+let tomatoesInterval = 5000;
+let cucumbersInterval = 10000;
 
 function addTomatoes() {
     tomato++
