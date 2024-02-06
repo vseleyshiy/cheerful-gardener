@@ -6,8 +6,8 @@ let tomatoesBedNum = 1;
 let cucumbersBedNum = 1;
 let tomatoesBedLimit = 6;
 let cucumbersBedLimit = 10;
-let tomatoesInterval = 5000;
-let cucumbersInterval = 10000;
+let tomatoesInterval = 5000; //5.000
+let cucumbersInterval = 10000; //10.000
 
 function addTomatoes() {
     tomato++
@@ -316,6 +316,9 @@ function showAchievementRedGold() {
             completedAchievement++;
             achievementRedGold.style.display = 'block';
             achievementRedGold.classList.add('achievement__animation');
+            setTimeout(() => {
+                hideAchievementRedGold();
+            }, 10000);
         }
     }
 }
@@ -342,6 +345,9 @@ function showAchievementMoneyHunter() {
     achievementMoneyHunter.style.display = 'block';
     achievementMoneyHunterIcon.style.display = 'none';
     achievementMoneyHunter.classList.add('achievement__animation');
+    setTimeout(() => {
+        hideAchievementMoneyHunter();
+    }, 10000);
 }
 
 function hideAchievementMoneyHunter() {

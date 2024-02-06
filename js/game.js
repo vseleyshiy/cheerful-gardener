@@ -6,7 +6,7 @@ function gameOpen() {
     shop.style.display = 'none';
     game.style.display = 'block';
     gameOpenButton.style.display = 'none';
-    shopOpenButton.style.display = 'none';
+    shopOpenButton.style.display = 'block';
     achievementMoneyHunterIcon.style.display = 'none';
 }
 
@@ -61,6 +61,18 @@ function btnRightClick() {
     givePoint();
     defeat();
 };
+
+addEventListener('keydown', (event) => {
+    if (event.code == 'KeyW' || event.code == 'ArrowUp') {
+        btnTopClick();
+    } else if (event.code == 'KeyA' || event.code == 'ArrowLeft') {
+        btnLeftClick();
+    } else if (event.code == 'KeyS' || event.code == 'ArrowDown') {
+        btnBottomClick();
+    } else if (event.code == 'KeyD' || event.code == 'ArrowRight') {
+        btnRightClick();
+    }
+})
 function defeat() {
     if (numY < 0 || numY > 200 || numX < 0 || numX > 200) {
         map.style.backgroundColor = 'rgb(155, 0, 0)';
